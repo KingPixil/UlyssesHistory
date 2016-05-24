@@ -483,3 +483,37 @@ $(document).ready(function() {
   var quiz_container = $('#quiz');
   quiz.render(quiz_container);
 });
+
+/* easter eggs */
+
+window.onblur = function() {
+	document.title = "Come Back! We Miss You! | Ulysses";
+};
+
+window.onfocus = function() {
+	document.title = "Ulysses | Kabir & Anish"
+};
+
+var pick=~~(Math.random()*359),
+    tag=document.createElement('style'),
+    style='::-moz-selection {color:white;text-shadow:rgba(0,0,0,.1)1px 2px 2px;background-color:hsl($pick,75%,50%)!important}::-webkit-selection{color:white;text-shadow:rgba(0,0,0,.1)1px 2px 2px;background-color:hsl($pick,75%,50%)!important}::selection{color:white;text-shadow:rgba(0,0,0,.1)1px 2px 2px;background-color:hsl($pick,75%,50%)!important}';
+  tag.innerHTML=style.replace(/\$pick/g,pick);
+  document.body.appendChild(tag);
+  
+  
+  
+var pressedK = [];
+  var konamiCode = '38,38,40,40,37,39,37,39,66,65';
+  // Listen for key presses and record their codes in the "pressed" array.
+  window.addEventListener('keydown', function(k) {
+    pressedK.push(k.keyCode);
+    // If the user enters the "KonamiCode" sequence...
+    if (pressedK.toString().indexOf(konamiCode) >= 0) {
+      surpriseK();
+      pressedK = [];
+    }
+  }, true);
+var surpriseK = function() {
+  alert('Try Editing the Text ;)')
+  document.getElementsByTagName("HTML")[0].setAttribute("contenteditable", "true");
+};
