@@ -214,7 +214,7 @@ Projects
 .project-open .cd-projects-previews {
   pointer-events: none;
 }
-.cd-projects-previews li {
+.cd-projects-previews li:not(.char-list) {
   height: 25%;
   width: 100%;
   overflow: hidden;
@@ -289,7 +289,7 @@ Projects
   opacity: 1;
 }
 @media only screen and (min-width: 1024px) {
-  .cd-projects-previews li {
+  .cd-projects-previews li:not(.char-list) {
     display: inline-block;
     height: 100%;
     width: 25%;
@@ -915,4 +915,16 @@ JavaScript Disabled
   text-align: center;
   width: 100%;
   display: block;
+}
+
+#char-list {
+  font-family: 'Quicksand';
+  text-align: center;
+}
+
+.desc {
+  font-family: 'Quicksand';
+  font-weight: bolder;
+  text-align: center;
+  font-size: 7vh;
 }
